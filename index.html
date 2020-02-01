@@ -15,13 +15,6 @@
 
 <!--script src="scripts/home.js"></script-->
 <style>
-	#main_background{
-		position: absolute;
-		top: 0px;
-		width: 100%;
-		z-index: -3;
-		max-height: 300px;
-	}
 	#background{
 		background-image: url('images/back.jpg');
 		background-repeat: no-repeat;
@@ -31,9 +24,13 @@
 	.w3-bar-item.heading{
 		border-bottom: 4px solid transparent;
 	}
-	.w3-bar-item:hover{
+	.w3-bar-item.heading:hover{
 		border-bottom: 4px solid white;
 		transition: border-bottom 0.3s linear;
+	}
+
+	.w3-theme{
+		background-color: #f8caa1 !important;
 	}
 
 </style>
@@ -47,18 +44,24 @@
 		<a class="w3-bar-item w3-button" href="#">Link 2</a>
 		<a class="w3-bar-item w3-button" href="#">Link 3</a>
 	</div>
-	
-	<div id="background" class="w3-center">	
-		<div  class="w3-content"><img src="/images/logo.png" style="height: 70px; width: auto"/></div>
-		<div class="w3-bar w3-wide w3-black w3-opacity-min w3-round bold w3-text-white w3-xlarge" 
-			 style="z-index: 100; margin-top: 15px; font-family: Neucha;">			
-			<a class="w3-bar-item heading" href="#">Ruhák</a>
-			<a class="w3-bar-item heading" href="#">
-				<span class="w3-hide-large material-icons">contact_phone</span>
-				<span class="w3-hide-small w3-hide-medium ">Kapcsolak</span>
-			</a>
-			<button class="w3-bar-item w3-transparent w3-text-white w3-left w3-xlarge" onclick="sideBar('toggle')">&#9776;</button>
-		</div>
+	<div class="w3-bar w3-theme w3-text-white w3-xlarge"  style="z-index: 100;">
+			<a class="w3-bar-item w3-left"><img src="/images/logo.png" style="height: 30px; width: auto"/></a>
+			<a class="w3-bar-item w3-left w3-hide-small" style="font-family: Parisienne" href="#"> Lydia Szalon</a>
+			
+			<button class="w3-bar-item w3-transparent w3-text-white w3-hide-small w3-hide-medium w3-right material-icons w3-xxlarge" onclick="sideBar('toggle')">menu</button>	
+			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium material-icons w3-xxlarge" href="#">shopping_cart</a>
+			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#"> Kapcsolak</a>
+			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#">Kiegészítők</a>
+			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#">Ruhák</a>	
+
+			<!-- Icons-->
+			<button class="w3-bar-item  w3-transparent w3-hide-large w3-text-white w3-right material-icons" onclick="sideBar('toggle')">menu</button>
+			<a class="w3-bar-item heading w3-right w3-hide-large material-icons" href="#">email</a>
+			<a class="w3-bar-item heading w3-right w3-hide-large material-icons" href="#">favorite</a>
+			<a class="w3-bar-item heading w3-right w3-hide-large material-icons" href="#">shopping_cart</a>
+				
+	</div>
+	<div id="background" class="w3-center w3-container">			
 		<div style="margin-top: 90px; font-family: Neucha; font-size: 1.3em; z-index: 100;"
 		  class="w3-container w3-text-white" >
 			<span id="landing_text" style="opacity: 0" class="w3-left w3-left-align "
@@ -129,7 +132,7 @@
 		</div>
 	</div>
 
-	<footer class="w3-black w3-text-white w3-center w3-padding">
+	<footer class="w3-theme w3-text-white w3-center w3-padding">
 		<div>
 			<span class="bold w3-xlarge">Időpontfoglalás</span><br>
 			<span>E-mail cím: info@lydiaszalon.hu</span><br>
