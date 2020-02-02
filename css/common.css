@@ -49,8 +49,8 @@ button:hover
 
 :root /*Variables*/
 {
-	--main-theme: Goldenrod;/*Crimson;*/
-	--secondary-color: #606060;
+	--main-theme: #f8c190;
+	--secondary-color: #f7af70;
 } 
 
 /*Yati trend header*/
@@ -185,7 +185,7 @@ ul#mobile-submenu ul li:hover
 
 .price-total{
 	font-weight: bold;
-	color: var(--main-theme);
+	color: var(--secondary-color);
 }
 
 /*slick*/

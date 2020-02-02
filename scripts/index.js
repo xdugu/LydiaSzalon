@@ -6,12 +6,10 @@
 
   });
 
-  function sideBar(state){
-	  if(state == 'toggle')
-		  $('#sidebar').toggle();
-	  else if(state == 'on')
-		  $('#sidebar').show();
-	 else
-		$('#sidebar').hide();
-  }
-	
+  var app = angular.module('LydiaSzalon', []);
+
+
+
+  app.controller('Home',function($scope){
+  
+  });

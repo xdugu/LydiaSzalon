@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="css/common.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
 <script src="/scripts/index.js"></script>
+<script src="/scripts/common.js"></script>
 
 
 <!--script src="scripts/home.js"></script-->
@@ -30,12 +32,13 @@
 	}
 
 	.w3-theme{
-		background-color: #f8caa1 !important;
+		background-color: #f8c190 !important;
 	}
 
 	.w3-theme-2{
 		background-color: #f7af70 !important;
 	}
+
 
 	.advertised div{
 	width:33%;
@@ -77,30 +80,9 @@
 
 </head> 
 
-<body onload="">
-	<div class="w3-sidebar w3-theme-2 w3-text-white w3-bar-block w3-right w3-large" style="display:none; right: 0px" id="sidebar">
-		<button onclick="sideBar('off')" class="w3-bar-item w3-button w3-large">Close &times;</button>
-		<a class="w3-bar-item w3-button w3-animate-left" href="#">Link 1</a>
-		<a class="w3-bar-item w3-button w3-animate-left" href="#">Link 2</a>
-		<a class="w3-bar-item w3-button w3-animate-left" href="#">Link 3</a>
-	</div>
-	<div class="w3-bar w3-theme w3-text-white w3-xlarge"  style="z-index: 100;">
-			<a class="w3-bar-item w3-left"><img src="/images/logo.png" style="height: 30px; width: auto"/></a>
-			<a class="w3-bar-item w3-left w3-hide-small" style="font-family: Parisienne" href="#"> Lydia Szalon</a>
-			
-			<button class="w3-bar-item w3-transparent w3-text-white w3-hide-small w3-hide-medium w3-right material-icons w3-xxlarge" onclick="sideBar('toggle')">menu</button>	
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium material-icons w3-xxlarge" href="#">shopping_cart</a>
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#"> Kapcsolak</a>
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#">Kiegészítők</a>
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#">Ruhák</a>	
+<body ng-app="LydiaSzalon" ng-controller="Home">
 
-			<!-- Icons fro mobile andtablets-->
-			<button class="w3-bar-item  w3-transparent w3-hide-large w3-text-white w3-right material-icons" onclick="sideBar('toggle')">menu</button>
-			<a class="w3-bar-item w3-right w3-hide-large material-icons" href="#">email</a>
-			<a class="w3-bar-item w3-right w3-hide-large material-icons" href="#">favorite</a>
-			<a class="w3-bar-item w3-right w3-hide-large material-icons" href="#">shopping_cart</a>				
-	</div>
-
+	<div ng-include="'header.html'"></div>
 	<div id="background" class="w3-container">			
 		<div style="margin-top: 90px; width: 100%; font-family: Neucha; font-size: 1.3em; z-index: 100;"
 		  class="w3-text-white" >
