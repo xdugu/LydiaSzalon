@@ -65,28 +65,7 @@
 </head> 
 
 <body onload="" ng-app="LydiaSzalon" ng-controller="Category1">
-	<div class="w3-sidebar w3-theme-2 w3-text-white w3-bar-block w3-right w3-large" style="display:none; right: 0px" id="sidebar">
-		<button onclick="sideBar('off')" class="w3-bar-item w3-button w3-large">Close &times;</button>
-		<a class="w3-bar-item w3-button w3-animate-left" href="#">Link 1</a>
-		<a class="w3-bar-item w3-button w3-animate-left" href="#">Link 2</a>
-		<a class="w3-bar-item w3-button w3-animate-left" href="#">Link 3</a>
-	</div>
-	<div class="w3-bar w3-theme w3-text-white w3-xlarge"  style="z-index: 100;">
-			<a class="w3-bar-item w3-left"><img src="/images/logo.png" style="height: 30px; width: auto"/></a>
-			<a class="w3-bar-item w3-left w3-hide-small" style="font-family: Parisienne" href="#"> Lydia Szalon</a>
-			
-			<button class="w3-bar-item w3-transparent w3-text-white w3-hide-small w3-hide-medium w3-right material-icons w3-xxlarge" onclick="sideBar('toggle')">menu</button>	
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium material-icons w3-xxlarge" href="#">shopping_cart</a>
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#"> Kapcsolak</a>
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#">Kiegészítők</a>
-			<a class="w3-bar-item heading w3-right w3-hide-small w3-hide-medium" href="#">Ruhák</a>	
-
-			<!-- Icons fro mobile andtablets-->
-			<button class="w3-bar-item  w3-transparent w3-hide-large w3-text-white w3-right material-icons" onclick="sideBar('toggle')">menu</button>
-			<a class="w3-bar-item w3-right w3-hide-large w3-xlarge material-icons" href="#">email</a>
-			<a class="w3-bar-item w3-right w3-hide-large w3-xlarge material-icons" href="#">favorite</a>
-			<a class="w3-bar-item w3-right w3-hide-large w3-xlarge material-icons" href="#">shopping_cart</a>				
-	</div>
+	<div ng-include="'header.html'"></div>
 
 	<div class="w3-container w3-margin-top" style="font-family: Neucha;">
 		<a ng-repeat="item in product[category]" ng-show="$odd" class="w3-left w3-display-container w3-margin-top w3-mobile" 

@@ -71,15 +71,17 @@
 	<div class="w3-margin-top w3-xxlarge w3-center" style="font-family: Neucha;color: var(--secondary-color);">{{category.sub}}</div>
 	
 	<div class="w3-container w3-margin-top" style="font-family: Neucha;">
-		<div ng-repeat="item in product[category.type] | filter : category.sub" class="w3-left w3-display-container w3-margin-top w3-mobile" 
-			style="width: 49%;">
+		<a ng-repeat="item in product[category.type] | filter : category.sub" 
+			class="w3-left w3-display-container w3-margin-top w3-mobile" 
+			style="width: 49%;"
+			href="product.html?itemId={{item.name}}&type={{category.type}}">
 			<div style="overflow-y: hidden; max-height: 500px;">
 				<img ng-src="/images/{{item.img}}" class="w3-padding" style="width: 100%;" />
 			</div>
 			<div class="w3-center w3-xlarge">{{item.name}}</div>
 			<div class="bold price-total w3-xlarge w3-center">{{item.price}} HUF</div>
 			<div class="w3-margin-top" style="border: 2px solid var(--main-theme)"></div>
-		</div>
+		</a>
 		
 	</div>
 

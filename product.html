@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Lydia Szalon </title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+
+<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+<link rel="stylesheet" href="css/normalize.css"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/common.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+<script src="/slick/slick.min.js"></script>
+<script src="/slick/angular-slick.js"></script>
+<script src="/scripts/common.js"></script>
+<script src="/scripts/product.js"></script>
+
+
+<!--script src="scripts/home.js"></script-->
+<style>
+
+	.w3-bar-item.heading{
+		border-bottom: 4px solid transparent;
+	}
+	.w3-bar-item.heading:hover{
+		border-bottom: 4px solid white;
+		transition: border-bottom 0.3s linear;
+	}
+
+	.w3-theme{
+		background-color: #f8c190 !important;
+	}
+
+	.w3-theme-2{
+		background-color: #f7af70 !important;
+	}
+
+	.advertised div{
+	width:33%;
+	height: auto;
+	}
+	.advertised div div{
+		width:100%;
+		overflow-y: hidden;
+		max-height: 400px;
+	}
+
+	@media (max-width:600px){
+	.advertised{
+		overflow-x: scroll;
+	}
+	.advertised div{
+		width: 70%;
+	}
+	.advertised div div{
+		overflow-y: hidden;
+		max-height: 220px;
+	}
+	.blog-view div{
+		width: 100%;
+	}
+
+	}
+
+	.info-content {
+	transition: all linear 0.7s;
+	max-height: 1000px;
+	}
+	.info-content.ng-hide{
+		max-height: 0px;
+	}
+</style>
+
+</head> 
+
+<body onload="" ng-app="LydiaSzalon" ng-controller="Product" >
+	<div ng-include="'header.html'"></div>
+
+	<div class="w3-row" style="font-family: Neucha; overflow-y: hidden">
+		<slick ng-if="item!=null" settings="slickConfig" id="img_stage" class="w3-margin-top w3-twothird" >
+				<!-- To prevent situation where the imgSrc is not loaded causing get errors -->
+			<div style="overflow-y:hidden; max-height: 500px" ng-repeat="img in item.img track by $index">
+				<img class="sub_image" ng-src="/images/{{img}}" style="width:100%;height:auto;margin:auto"/>	
+			</div>
+		</slick>
+		<div class="w3-third w3-padding w3-margin-top">
+			 <div class="w3-xlarge w3-section">{{item.name}}</div>
+			 <div class="price-total w3-xlarge w3-section">{{item.price}} Ft</div>
+			 <div style="border: 2px solid var(--secondary-color)"
+					 class="w3-button w3-large w3-round w3-center w3-theme-2 w3-section w3-hover-white"
+					 ng-click="addToBasket()">
+					 Kosárba rakom
+			</div>
+			<div class="w3-large w3-center w3-blue" style="max-height: 0px; overflow-y: hidden" 
+					id="basket_success">A termék a kosaradba került
+			</div>
+		</div>
+	</div>
+
+	<div  class="w3-margin-top" style="font-family: Neucha;" ng-init="page = {current: 'description'}">
+			
+		<div class="w3-center">
+			<div class="w3-bar w3-theme w3-large">
+				<button class="w3-bar-item w3-button w3-center" 
+						ng-click="page.current ='description'"
+						ng-class="{'w3-theme-2': page.current =='description'}">
+					Leírás
+				</button>
+				<button class="w3-bar-item w3-button" 
+						ng-click="page.current ='delivery'"
+						ng-class="{'w3-theme-2': page.current =='delivery'}">
+					Szállítás
+				</button>
+				<button class="w3-bar-item w3-button" 
+						ng-click="page.current ='returns'"
+						ng-class="{'w3-theme-2': page.current =='returns'}">
+					Áruvisszaküldés
+				</button>
+			</div>
+		</div>
+
+		<div class="w3-container w3-animate-left w3-center" style="overflow-y: hidden;">
+			<div ng-show = "page.current == 'description'">
+				<ul class="w3-ul">
+					<li>Beépített melltartó: Igen</li> 
+					<li>Nyak: O-nyak</li>
+					<li>Dekoráció: Csipke, kristály, flitter</li>
+					<li>Testre szabás: Igen</li>
+					<li>Divat elem: Nyitott hát</li>
+					<li>Övvonal: Természetes</li>
+					<li>Ujj hossz: Rövid</li>
+					<li>Anyag:Tüll, csipke</li>
+					<li>Várandós nõk számára: Igen</li>
+					<li>Ruha hossza: Földig érõ</li>
+				</ul>
+			</div>
+			<div ng-show = "page.current == 'delivery'" >
+				A csomagokat a <u>GLS</u> futárszolgálat illetve a <u>Foxpost</u> segítségével kézbesítjük.<br><br>
+				<u>Országok, ahova szállítunk:</u> Magyarország, Ausztria, Németország, Egyesült Királyság.<br>
+				Egyéb ország esetében, kérjük vegye fel velünk a kapcsolatot!<br><br>
+			</div>
+			<div ng-show = "page.current == 'returns'" >
+				A megrendelt termék kézhezvételét követően 14 nap áll rendelkezésére, hogy visszaküldjön bármely <br>
+				terméket indoklás nélkül. Bármely termék, amely a 14 napos határidőn kívül érkezik vissza hozzánk,<br>
+				nem minősíthető visszáruként, így nem is cserélhetőek ki.
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="w3-theme w3-text-black w3-center w3-padding w3-margin-top">
+		<div>
+			<span class="bold w3-xlarge">Időpontfoglalás</span><br>
+			<span>E-mail cím: info@lydiaszalon.hu</span><br>
+			<span>Telefon: +36 30 716 0299</span>
+		</div>
+		<div>
+			<!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"></a></td></tr></table><!-- PayPal Logo -->
+		</div>
+
+	</footer>
+
+
+
+
+
+
+</body>
+</html>
