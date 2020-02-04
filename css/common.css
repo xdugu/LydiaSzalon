@@ -5,7 +5,7 @@
 body {
   width: 100%;
   -webkit-overflow-scrolling: touch;
-  font-family: 'Montserrat', calibri, aria, verdana, sans-serif;
+  font-family: Neucha, 'Montserrat', calibri, aria, verdana, sans-serif;
   background-color: white;
   color: black;
 }
@@ -224,7 +224,18 @@ ul#mobile-submenu ul li:hover
 	width:50%;
 	}
 
-
+ #landing_img{
+	transition: transform 5s;
+ 
+}
+#landing_img.animate{
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1); 
+	 transform: scale(1.1); 
+}
+footer{
+	font-family: 'Montserrat', calibri;
+}
 
 @media only screen and (min-width: 601px) {
   #register-button{

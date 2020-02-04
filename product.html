@@ -124,8 +124,8 @@
 		</div>
 
 		<div class="w3-container w3-animate-left w3-center" style="overflow-y: hidden;">
-			<div ng-show = "page.current == 'description'">
-				<ul class="w3-ul">
+			<div ng-show = "page.current == 'description'" class="w3-content" style="max-width: 600px; overflow-x:hidden">
+				<ul class="w3-ul" ng-show="category.type=='dresses'">
 					<li>Beépített melltartó: Igen</li> 
 					<li>Nyak: O-nyak</li>
 					<li>Dekoráció: Csipke, kristály, flitter</li>
@@ -136,6 +136,16 @@
 					<li>Anyag:Tüll, csipke</li>
 					<li>Várandós nõk számára: Igen</li>
 					<li>Ruha hossza: Földig érõ</li>
+				</ul>
+
+				<ul class="w3-ul" ng-show="category.type=='accessories'">
+					<li>Gyönyörû kézzel készített csokor, hogy a Nagy Nap emlékei veled maradjanak.</li> 
+					<li>30 darab kézzel készített rózsából.</li>
+					<li>Anyaga akril, selyem, poliészter, len.</li>
+					<li>Magassága: 21cm</li>
+					<li>Szélessége: 23cm</li>
+					<li>Súlya: 0,6kg</li>
+					<li>Színe: Lila-fehér, tört fehér, fehér-pink.</li>
 				</ul>
 			</div>
 			<div ng-show = "page.current == 'delivery'" >

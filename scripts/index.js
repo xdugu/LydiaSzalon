@@ -1,9 +1,8 @@
   
 
-  $(document).ready(function() {
-	  $('#background').animate({'background-size':'105%'}, 6000)
+  $(document).ready(function() {    
 	  $('#landing_text').animate({'opacity':'1'}, 3000)
-
+    $('#landing_img').toggleClass('animate');
   });
 
   var app = angular.module('LydiaSzalon', []);
